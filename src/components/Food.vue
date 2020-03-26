@@ -10,21 +10,11 @@
         <label for="description">Description</label>
         <input type="text" class="form-control" id="description" v-model="currentFood.description" />
       </div>
-
       <div class="form-group">
-        <label>
-          <strong>Status:</strong>
-        </label>
-        {{ currentFood.published ? "Published" : "Pending" }}
+        <label for="category">Category</label>
+        <input type="text" class="form-control" id="category" v-model="currentFood.category" />
       </div>
     </form>
-
-    <button
-      class="badge badge-primary mr-2"
-      v-if="currentFood.published"
-      @click="updatePublished(false)"
-    >UnPublish</button>
-    <button v-else class="badge badge-primary mr-2" @click="updatePublished(true)">Publish</button>
 
     <button class="badge badge-danger mr-2" @click="deleteFood">Delete</button>
 
@@ -61,23 +51,6 @@ export default {
         });
     },
 
-    updatePublished(status) {
-      var data = {
-        id: this.currentFood.id,
-        title: this.currentFood.title,
-        description: this.currentFood.description,
-        published: status
-      };
-
-      FoodDataService.update(this.currentFood.id, data)
-        .then(response => {
-          this.currentFood.published = status;
-          console.log(response.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    },
 
     updateFood() {
       FoodDataService.update(this.currentFood.id, this.currentFood)

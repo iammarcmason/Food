@@ -24,6 +24,11 @@
         />
       </div>
 
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input class="form-control" id="category" required v-model="food.category" name="category" />
+      </div>
+
       <button @click="saveFood" class="btn btn-success">Submit</button>
     </div>
 
@@ -45,7 +50,7 @@ export default {
         id: null,
         title: "",
         description: "",
-        published: false
+        category: ""
       },
       submitted: false
     };
@@ -54,7 +59,8 @@ export default {
     saveFood() {
       var data = {
         title: this.food.title,
-        description: this.food.description
+        description: this.food.description,
+        category: this.food.category
       };
 
       FoodDataService.create(data)

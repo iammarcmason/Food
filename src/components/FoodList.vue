@@ -39,9 +39,9 @@
         </div>
         <div>
           <label>
-            <strong>Status:</strong>
+            <strong>Category:</strong>
           </label>
-          {{ currentFood.published ? "Published" : "Pending" }}
+          {{ currentFood.category }}
         </div>
 
         <a class="badge badge-warning" :href="'/food/' + currentFood.id">Edit</a>
@@ -64,7 +64,8 @@ export default {
       foods: [],
       currentFood: null,
       currentIndex: -1,
-      title: ""
+      title: "",
+      category: ""
     };
   },
   methods: {
