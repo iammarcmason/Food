@@ -34,7 +34,12 @@
 
     <div v-else>
       <h4>You submitted successfully!</h4>
-      <button class="btn btn-success" @click="newFood">Add</button>
+      <span>
+        <button class="btn btn-success" @click="newFood">Add</button>
+      </span>
+      <span>
+        <button class="btn btn-success" @click="$router.push('food')">Food List</button>
+      </span>
     </div>
   </div>
 </template>

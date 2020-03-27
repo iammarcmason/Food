@@ -16,9 +16,14 @@ const routes = [
     component: () => import('../components/Food.vue'),
   },
   {
-    path: '/add',
-    name: 'add',
+    path: '/addFood',
+    name: 'addFood',
     component: () => import('../components/AddFood.vue'),
+  },
+  {
+    path: '/schedule',
+    name: 'schedule',
+    component: () => import('../components/Schedule.vue'),
   },
 ];
 

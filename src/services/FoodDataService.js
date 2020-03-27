@@ -28,6 +28,10 @@ class FoodDataService {
   findByTitle(title) {
     return http.get(`/food?title=${title}`);
   }
+
+  findByCategory(category) {
+    return http.get(`/food?category=${category}`);
+  }
 }
 
 export default new FoodDataService();
